@@ -7,13 +7,14 @@ var started = false;
 var level = 0;
 
 // game start command
-$(document).keypress(function () {
+$(document).on('keypress touchstart', function () {
     if (!started){
         $("#level-title").text("Level " + level);
         nextSequence();
         started = true;
     } 
-})
+});
+
 
 // function for user keypresses
 $(".btn").click(function () {
