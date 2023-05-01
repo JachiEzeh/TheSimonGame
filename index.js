@@ -2,17 +2,21 @@
 var buttonColors = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 var userClickedPattern = [];
-
 var started = false;
 var level = 0;
+$(".container").hide();
 
 // game start command
+$(document).keypress(function () {
 $(document).on('keypress touchstart', function () {
     if (!started){
         $("#level-title").text("Level " + level);
         nextSequence();
         started = true;
+        $(".center-style").hide();
+        $(".container").show();
     } 
+})
 });
 
 
@@ -25,7 +29,6 @@ $(".btn").click(function () {
     // So function to check answer runs immediately after the button is pressed
     checkAnswer(userClickedPattern.length - 1);
 });
-
 // Function to check checkAnswer...the most important function
 function checkAnswer(currentLevel) {
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
@@ -49,24 +52,20 @@ function checkAnswer(currentLevel) {
 function nextSequence() {
     // To reset the user clicked pattern array when the next level starts remving this line will make the game super easy
     userClickedPattern = [];
-
     level++;
     
     $("#level-title").text("Level " + level);
-
     randomNumber = Math.floor(Math.random() * 4);
     randomChosenColor = buttonColors[randomNumber];
     gamePattern.push(randomChosenColor);
     $("#" + randomChosenColor).fadeIn(200).fadeOut(200).fadeIn(200);
     playSound(randomChosenColor);
 }
-
 // Sound function
 function playSound(name) {
     var buttonSound = new Audio('sounds/' + name + '.mp3');
     buttonSound.play();
 }
-
 // function to animate the user pressing the button
 function animatePress(currentColor) {
     var activeButton = $("#" + currentColor);
@@ -76,7 +75,6 @@ function animatePress(currentColor) {
     activeButton.removeClass("pressed");
     }
 }
-
 // function to show the game is over
 function animateWrong() {
     $("body").addClass("game-over");
@@ -85,11 +83,13 @@ function animateWrong() {
         $("body").removeClass("game-over");
     }
 }
-
 // Resetting the variables for a new round after the game has been lost
 function startOver() {
     gamePattern = [];
     userClickedPattern = [];
     started = false;
+    $("h3").show();
+    $(".container").hide();
     level = 0;
 }
+

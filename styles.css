@@ -3,11 +3,21 @@ body {
   background-color: #011F3F;
 }
 
+h2, h3 {
+  font-weight:200;
+  font-size:larger;
+  color: rgb(234, 255, 131);
+  font-family:Verdana, Geneva, Tahoma, sans-serif; 
+  margin: auto;
+  width: 60%;
+  line-height: 1.5;
+}
+
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
   margin:  5%;
-  color: #FEF2BF;
+  color: rgb(230, 255, 107);
 }
 
 .container {
@@ -50,4 +60,8 @@ body {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+}
+
+.title-color{
+  color: rgb(251, 255, 233);
 }
