@@ -3,9 +3,8 @@ body {
   background-color: #011F3F;
 }
 
-h2, h3 {
+.center-style {
   font-weight:200;
-  font-size:larger;
   color: rgb(234, 255, 131);
   font-family:Verdana, Geneva, Tahoma, sans-serif; 
   margin: auto;
@@ -35,6 +34,24 @@ h2, h3 {
   border: 10px solid black;
   border-radius: 20%;
 }
+
+.start-button {
+  height: 50px;
+  width: 200px;
+  border-radius: 10%;
+  color: white;
+  background-color: rgb(0, 136, 0);
+  border-style: dotted;
+  border-color: beige;
+  }
+
+.start-word{
+    font-weight: 900;
+      font-size: 1.5rem;
+      color: rgb(246, 249, 255);
+      font-family:cursive;
+      margin: auto;
+  }
 
 .game-over {
   background-color: red;

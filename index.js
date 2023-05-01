@@ -7,16 +7,15 @@ var level = 0;
 $(".container").hide();
 
 // game start command
-$(document).keypress(function () {
-$(document).on('keypress touchstart', function () {
+$(".start-button").click(function () {
     if (!started){
         $("#level-title").text("Level " + level);
         nextSequence();
         started = true;
         $(".center-style").hide();
         $(".container").show();
+        $(".start-button").hide();
     } 
-})
 });
 
 
@@ -90,6 +89,7 @@ function startOver() {
     started = false;
     $("h3").show();
     $(".container").hide();
+    $(".start-button").show();
     level = 0;
 }
 
