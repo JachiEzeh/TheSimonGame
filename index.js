@@ -42,7 +42,7 @@ function checkAnswer(currentLevel) {
         var buttonSound2 = new Audio('sounds/wrong.mp3');
          buttonSound2.play();
          animateWrong();
-         $("#level-title").text("Game Over! Press any key to restart");
+         $("#level-title").text('Game Over! Press "Play" to restart');
          startOver();
         }
     }
